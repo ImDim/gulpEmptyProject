@@ -1,0 +1,36 @@
+$main_font_family: Arial, sans-serif;
+$second_font_family: Arial, cursive;
+
+
+$dark: (
+
+        html_bg_color: #eef3f6,
+        main_color: #000,
+
+        burger_bg: #afb7bd,
+        dropdown_menu_bg: #FFF,
+        dropdown_menu_dark: #1f2637,
+
+
+);
+
+
+$theme: $dark;
+
+
+@mixin flex( $jc, $ai ) {
+
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+
+}
+
+@mixin placeholder {
+
+    &::-webkit-input-placeholder {@content;}
+    &::-moz-placeholder          {@content;}
+    &:-moz-placeholder           {@content;}
+    &:-ms-input-placeholder      {@content;}
+
+}
