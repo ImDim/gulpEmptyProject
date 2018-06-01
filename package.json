@@ -17,6 +17,8 @@
     "gulp-css-unit": "*",
     "gulp-csso": "*",
     "gulp-eslint": "*",
+    "gulp-if": "*",
+    "gulp-imagemin": "^4.1.0",
     "gulp-load-plugins": "*",
     "gulp-minifier": "*",
     "gulp-notify": "*",

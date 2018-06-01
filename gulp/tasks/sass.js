@@ -2,11 +2,17 @@
 
 module.exports = function() {
     $.gulp.task('sass', function() {
-        return $.gulp.src('./source/style/**/app.scss')
-            //.pipe($.gp.sourcemaps.init())
-            .pipe($.gp.sass()).on('error', $.gp.notify.onError({ title: 'Style' }))
+        return $.gulp.src([
+            $.config.src + 'styles/**/*.scss'
+        ])
+            .pipe(
+                $.gp.if(
+                    !$.config.production, $.gp.sourcemaps.init()
+                )
+            )
+            .pipe($.gp.sass())
+            .on('error', $.gp.notify.onError({ title: 'Style' }))
             .pipe($.gp.autoprefixer({ browsers: $.config.autoprefixerConfig }))
-            //.pipe($.gp.cssUnit({type : 'px-to-rem',fontSize : 16}))
             .pipe( $.gp.minifier({
 
                 minify: $.config.minify,
@@ -20,8 +26,17 @@ module.exports = function() {
                 }
 
             }))
-            //.pipe($.gp.sourcemaps.write())
-            .pipe($.gulp.dest($.config.root + '/assets/css'))
+            .pipe(
+                $.gp.if(
+                    !$.config.production, $.gp.sourcemaps.write()
+                )
+            )
+            .pipe(
+                $.gp.if(
+                    $.config.production, $.gulp.dest($.config.path.prod + 'css')
+                )
+            )
+            .pipe($.gulp.dest($.config.path.dev + 'css'))
             .pipe($.browserSync.stream());
     })
 };

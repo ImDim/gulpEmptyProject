@@ -2,14 +2,12 @@
 
 module.exports = function() {
   $.gulp.task('serve', function() {
-    $.browserSync.init({
-        open: 'external',
+    $.browserSync.init($.config.browserSync);
 
-        proxy: $.config.proxy,
-        host: $.config.host
-
-    });
-
-    $.browserSync.watch([$.config.root + '/**/*.*', '!**/*.css'], $.browserSync.reload);
+    $.browserSync.watch([
+      $.config.src + '**/*.*', 
+      $.config.src + '!**/*.scss',
+      $.config.src + '!**/*.css'
+    ], $.browserSync.reload);
   });
 };

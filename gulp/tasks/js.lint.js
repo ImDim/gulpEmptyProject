@@ -2,7 +2,7 @@
 
 module.exports = function() {
   $.gulp.task('js:lint', function() {
-    return $.gulp.src($.path.app)
+    return $.gulp.src($.path.js.app)
       .pipe($.gp.eslint())
       .pipe($.gp.eslint.format());
   })

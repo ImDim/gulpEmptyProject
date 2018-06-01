@@ -7,13 +7,10 @@ module.exports = [
     './gulp/tasks/pug.js',
     './gulp/tasks/watch.js',
     './gulp/tasks/clean.js',
-
-    './gulp/tasks/js.process.js',
-
+    './gulp/tasks/js.process.app.js',
+    './gulp/tasks/js.process.vendor.js',
     './gulp/tasks/js.lint.js',
     './gulp/tasks/copy.image.js',
-    //'./gulp/tasks/sprite.svg.js',
     './gulp/tasks/copy.js.js',
     './gulp/tasks/copy.fonts.js'
-    //'./gulp/tasks/sprite.smith.js'
 ];
