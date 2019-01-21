@@ -9,7 +9,7 @@
   "devDependencies": {
     "browser-sync": "*",
     "del": "*",
-    "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
+    "gulp": "4.0",
     "gulp-autoprefixer": "*",
     "gulp-cheerio": "*",
     "gulp-concat": "*",
